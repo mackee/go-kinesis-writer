@@ -50,7 +50,7 @@ func main() {
     logger = logger.WithOptions(zap.WrapCore(func(core zapcore.Core) zapcore.Core {
         return zapcore.NewCore(
             zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig()),
-            kinesisWriter,
+            kw,
             zapcore.DebugLevel,
         )
     }))
